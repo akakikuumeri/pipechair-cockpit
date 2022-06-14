@@ -26,6 +26,15 @@ After this you can add the cams and the cam follower bearings, and assemble the 
 
 To be updated
 
+# Wiring the pedal potentiometers
+
+You can use a single potentiometer on just one of the pedals. The pedals are linked to move together, so it is enough to measure just one of them. However, the PVC pipe frame can bend if you press on both pedals at the same time, and give you a false reading on the rudder axis. To prevent this, you can wire two identical potentiometers in a differential configuration ( https://github.com/akakikuumeri/pipechair-cockpit/blob/main/pedals%20wiring%20diagram.jpeg ). This way the potentiometers cancel out any movement that happens on both pedals in the same direction, and only ouput the difference between them.
+
+Pay attention to the order of GND and 5V wires. When installed on the pedals, one pot should have the GND on the top and one on the bottom. https://github.com/akakikuumeri/pipechair-cockpit/blob/main/pedals%20wiring%20photo.jpg
+
+Notice that if the two potentiometers are moved all the way in one direction (both pedals pushed all the way back or all the way forward) this wiring might short out the GND and 5V pins. To protect your electronics from this unlikely risk, you can add two small resistors on the wiper pins of the potentiometers as in the diagram. I used 47 Ohm reistors, any value that is large enough to prevent a large current in case of a short, and small enough compared to the potentiometer resistance, is fine (10 to 100 Ohms perhaps).
+
+
 # License
 
 CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
