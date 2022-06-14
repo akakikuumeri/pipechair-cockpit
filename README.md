@@ -3,6 +3,8 @@
 
 ![3D render](pipechair%20cockpit%20render.png?raw=true)
 
+Video: https://www.youtube.com/watch?v=8db8fcycaJI
+
 Features a robust joystick gimbal that only needs 608 "skate" bearings and no other hardware. Instead of metal bolts, it uses 3D printed dowels.
 
 The frame and the stick shaft are 18 mm PVC pipe. The whole device clips onto a pipe chair.
