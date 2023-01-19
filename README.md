@@ -5,13 +5,33 @@
 
 Video: https://www.youtube.com/watch?v=8db8fcycaJI
 
-Features a robust joystick gimbal that only needs 608 "skate" bearings and no other hardware. Instead of metal bolts, it uses 3D printed dowels.
+Features a robust joystick gimbal that only needs 608 "skate" bearings and no other hardware. Instead of metal bolts or shafts, it uses 3D printed dowels.
 
-The frame and the stick shaft are 18 mm PVC pipe. The whole device clips onto a pipe chair.
+The frame and the stick shaft are 18 mm PVC pipe. The whole device clips onto a pipe chair. Unless you have the same chair as I do, you will need to modify the left-hand panel 3D files to make it fit.
 
 The stick head is styled like a glider stick.
 
-Stick motion is sensed with either bare Hall effect sensor components, or TLE5010/11 digital magnetoresistive sensors. Other axes are sensed with the common potentiometer. I recommend the MMJoy2 firmware and an Arduino Micro to manage the USB device.
+Stick motion is sensed with a pair of TLE5010/11 digital magnetoresistive sensors (in the video I briefly show how you could use bare hall effect sensors too). Other axes are sensed with the common potentiometer. I recommend the MMJoy2 firmware and an Arduino Micro to manage the USB device.
+
+# Bill of Materials
+
+* PLA filament for 3D printed parts (PETG or ABS should work equally well). Less than 500 g is used.
+* Arduino Micro or other equivalent microcontroller board with ATmega32U4, or any board supported by the [MMJoy2 firmware](https://simhq.com/forum/ubbthreads.php/topics/3899105/mmjoy-mmjoy2-set-your-own-usb-controller-with-a-cheap-arduino)
+* 608 bearings 12 pieces. These are the bearings commonly found in skateboards.
+* 20 mm M3 bolts and nuts. About 10 pairs.
+* PVC pipe with an outer diameter of 18 mm. About 3 meters is needed.
+* Magnetoresistive sensor TLE5010/5011, 2 pcs, and associated magnets
+* Rotary potentiometers. (What's the part number of that classic pot?) 10 KOhm or similar value. 4 pcs
+* Panel mount switches
+* Rubber bands
+* Zip ties
+* 1 shoe string or other non-stretching rope
+* Multiple core wire to carry signals between modules. I used some ethernet cable with 8 cores. You could use a bunch of single core wire too.
+For joystick head:
+* PCB prototyping board with 0.1" pitch holes. Approx. 5 cm x 5 cm
+* Throughhole tactile switches, similar to SKHHAJA010, 6 pcs
+* Thoughhole 5-way navigation switch. SKQUCAA010
+* Throughhole diodes, about 10 pcs
 
 # Build steps
 
@@ -24,7 +44,20 @@ The inner frame of the gimbal must be assembled in a specific order:
 * Insert dowels in all 6 available locations The dowel through the bearing on the left side of the inner frame will complete the Y axis shaft. The four dowels in the round "ears" will receive the cams
 After this you can add the cams and the cam follower bearings, and assemble the outher frame around it
 
-To be updated
+The joystick shaft can be formed into shape by carefully heating the PVC pipe. Burning PVC is very dangerous. Please research a safe way to bend the pipe before starting.
+
+The head of the stick has a cut-up PCB protoboard inside it. 6 tactile buttons and a 5-way hat switch are soldered onto the board, to match the holes in the stick head. Form a diode matrix on the PCB board according to instructions in the MMjoy2 documentation. The face of the head is held in place with M3 bolts and captured nuts.
+
+Assemble the pedals and left-hand panel according to the layout in the STEP file.
+
+Various pieces are mounted to the two parallel PVC pipes using 3D printed collars. You can clamp these by using 3M bolts and nuts. I found they had to be very tight or they would slip, so in the end I often used some short wood screws and just screwed through the 3D printed part and the PVC pipe to hold pieces in place permanently.
+
+* Use a dowel and a bearing to fit the pulley wheel in front of the rudder pedals.
+* Tie a shoetring between the pedals and around the pulley, to link the motion of the two pedals together.
+* Tie some rubber bands to tension the pedals. One rubber band should be tied between the two pedals, so that they return to center. One rubber band should go from each pedal to behind the pedal, to pull the pedal back against the shoestring.
+
+The airbrake lever and trim lever have friction clutches. They are tensioned by a printed bolt and nut.
+The lever positions are sensed by geared potentiometers.
 
 # Wiring the pedal potentiometers
 
